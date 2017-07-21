@@ -1,0 +1,75 @@
+﻿@model IEnumerable<MebleShop.Models.Entities.OurServices.Service>
+@{
+    ViewBag.Title = "Index";
+}
+<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+<h2>Наши услуги</h2>
+<p>
+    @Html.ActionLink("Создать", "Create", new { }, htmlAttributes: new { @class = "btn btn-primary", @style = "margin-bottom: 5px" })
+</p>
+<table class="gridtable">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>Всего фотографий</th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @if (item.Description.Length > 30)
+                {
+                    @String.Concat(item.Description.Substring(0, 30), "...")
+                }
+                else
+                {
+                    @Html.DisplayFor(modelItem => item.Description)
+                }
+            </td>
+            <td class="infophoto">
+                @if (item.FileServiceDetails.Count() == 0)
+                {
+                    <span class="text-danger" style="font-weight: bold">Нету файлов</span>
+                }
+                else
+                {
+                    <span>@item.FileServiceDetails.Count() Фото</span>
+                }
+            </td>
+            <td>
+                @Html.ActionLink("Изменить", "Edit", new { id = item.ServiceId }) |
+                <a href="javascript:void(0);" data-id="@item.ServiceId" class="deleteItem">Удалить</a>
+            </td>
+        </tr>
+    }
+</table>
+@section Scripts {
+
+    <script>
+        $('.deleteItem').click(function (e) {
+            e.preventDefault();
+            var $ctrl = $(this);
+            if (confirm('Вы уверены, что хотите удалить этот файл?')) {
+                $.ajax({
+                    url: '@Url.Action("Delete")',
+                    type: 'POST',
+                    data: { id: $(this).data('id') }
+                }).done(function (data) {
+                    if (data.Result == "OK") {
+                        $ctrl.closest('tr').remove();
+                    }
+                    else if (data.Result.Message) {
+                        alert(data.Result.Message);
+                    }
+                }).fail(function () {
+                    alert("Что-то пошло не так. Пожалуйста, попробуйте еще раз");
+                })
+
+            }
+        });
+    </script>
+}
+
+

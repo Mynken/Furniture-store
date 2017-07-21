@@ -1,0 +1,23 @@
+﻿@model MebleShop.Models.Entities.OurServices.Service
+@{
+    ViewBag.Title = "Delete";
+}
+<h2>Удаление</h2>
+<h3>Вы уверены что хотите удалить этот файл?</h3>
+<fieldset>
+    <legend>Удаление</legend>
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Description)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+</fieldset>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Удалить" /> |
+        @Html.ActionLink("Назад", "Index")
+    </p>
+}

@@ -1,0 +1,76 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+table.gridtable {
+    font-family: verdana,arial,sans-serif;
+    font-size: 0.9em;
+    color: #333333;
+    border-width: 1px;
+    border-color: #666666;
+    border-collapse: collapse;
+}
+
+table.gridtable th {
+        border-width: 1px;
+        padding: 8px;
+        border-style: solid;
+        border-color: #666666;
+        background-color: #dedede;
+    }
+
+    table.gridtable td {
+        border-width: 1px;
+        padding: 8px;
+        border-style: solid;
+        border-color: #666666;
+        background-color: #ffffff;
+    }
+.infophoto
+{
+    text-align:center;
+}
+
+ul.attachment {
+    width: 40%;
+    padding: 0px;
+}
+
+ul.attachment li {
+    margin: 1em;
+    padding: 1em;
+    border: solid 1px #808080;
+    background-color: #dddddd;
+    font-size: 0.9em;
+    list-style-type: none;
+}
+
+    ul.attachment li a {
+        font-weight: bold;
+    }
+
+        ul.attachment li a.title {
+        }
+
+        ul.attachment li a.deleteItem {
+            text-align: right;
+            float: right;
+            color: #808080;
+        }

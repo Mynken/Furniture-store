@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title – *сайт мебели*</title>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+    @*<link rel="shortcut icon" href="img/logotip_stranici.png" />*@
+
+    @Styles.Render("~/Content/Shop/css")
+    @Scripts.Render("~/bundles/shop")
+
+</head>
+
+<body>
+    <div class="body">
+        <header id="header" class="col-sm-12 col-md-12 col-lg-12">
+            <div class="col-sm-3 col-md-3 col-lg-3 header left">
+                <div class="logo">
+                    <p>Здесь будет <br> какойто логотип</p>
+                    <div id="Button_zakaz">
+                        <p><em>Готовы сделать заказ?</em></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-6 header center">
+                <div class="name">
+                    <h1>MebelTop</h1>
+                </div>
+            </div>
+            <div class="col-sm-3 col-md-3 col-lg-3 header right">
+                <center>
+                    <p class="phone"> <img src="~/fonts/images/icon-phone.png"> +38-097-402-44-81</p>
+                    <p class="phone"> <img src="~/fonts/images/icon-phone.png"> +38-097-402-44-81</p>
+                    <p class="mail"><img src="~/fonts/images/icon-mail.png"> mebel@gmail.com</p>
+
+                </center>
+            </div>
+        </header>
+
+        <nav id="nav" class="col-sm-12 col-md-12 col-lg-12">
+            <center>
+                <ul>
+                    <a><li>Главная</li></></a>
+                    <a><li>Услуги</li></></a>
+                    <a><li>Цены</li></></a>
+                    <a><li>Отзывы</li></></a>
+                    <a><li>Контакты</li></></a>
+                </ul>
+            </center>
+        </nav>
+
+        <div id="full-body" class="col-sm-12 col-md-12 col-lg-12">
+
+            <div class="col-sm-1 col-md-1 col-lg-1">
+
+                <div id="Button_up">
+                    <div class="Button_up_podsvetka">
+                        <div class="arrow up"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-10 col-md-10 col-lg-10 content_body">
+
+                <div class="img_divan">
+                    <center>
+                        <img src="~/fonts/images/sofa.jpg">
+                    </center>
+                </div>
+
+                <div>
+                    @RenderBody()
+
+                    
+                    @*<footer id="footer">
+                        <div id="P_main" class="col-xs-12 col-md-12 col-lg-12">
+                            <ul id="ul_footer">
+                                <p class="footer_p1">
+                                    <a class="a1" href="#">Умови використання та продажу</a>
+                                    <a class="a2" href="#">Оставить отзыв</a>
+                                    © 2017 FutureSoftWare
+                                </p>
+                            </ul>
+                        </div>
+                    </footer>*@
+                </div>
+            </div>
+            </div>
+            @Scripts.Render("~/bundles/jquery")
+            @Scripts.Render("~/bundles/bootstrap")
+            @RenderSection("scripts", required: false)
+</body>
+</html>

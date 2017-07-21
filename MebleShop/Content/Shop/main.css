@@ -1,0 +1,598 @@
+﻿html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em,
+img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u,
+i, dl, dd, ol, fieldset, form, label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+    blockquote:before, blockquote:after, q:before, q:after {
+        content: '';
+        content: none;
+    }
+
+:focus {
+    outline: 0;
+}
+
+ins {
+    text-decoration: none;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+p {
+    padding: 10px;
+    font-size: 18px;
+    text-align: justify;
+    line-height: 1.5;
+}
+
+h1 {
+    font-size: 70px;
+}
+
+h3 {
+    font-weight: 700;
+    color: silver;
+    text-shadow: 0.06em 0.06em black;
+    width: 400px;
+    height: 60px;
+    margin: 30px 0px 30px 0px;
+    padding: 10px;
+    background-color: #800000;
+    text-align: center;
+    font-size: 35px;
+    box-shadow: 5px 5px 20px 0px rgba(0,0,0,0.6);
+}
+
+h4 {
+    margin: 0px 0px 40px 0px;
+    font-weight: 700;
+    color: silver;
+    text-shadow: 0.06em 0.06em black;
+    text-align: center;
+    font-size: 35px;
+}
+
+html {
+    min-width: 1000px;
+    height: 100%;
+}
+
+body {
+    /* line-height: 1; */
+    width: 100%;
+    height: 100%;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #333333;
+}
+
+#header {
+    background-color: #22252d;
+    height: 200px;
+    min-width: 1000px;
+    z-index: 2000;
+}
+
+.body {
+    /* background-image: linear-gradient(#F1D00E, #F19B0E);  */
+    background-color: #36025E;
+    width: 100%;
+    height: 5000px;
+}
+
+
+.header {
+    height: 200px;
+}
+/*                                                                                                                      heder left*/
+.left .logo {
+    margin: 70px 0px 0px 0px;
+    text-align: center;
+    color: white;
+}
+
+
+
+#Button_zakaz {
+    width: 150px;
+    height: 150px;
+    position: fixed; /* фиксированная позиция */
+    opacity: .1; /* прозрачность */
+    padding: 15px 10px 10px; /* отступы */
+    background: #800000;
+    border: 5px solid silver;
+    border-radius: 500px; /* скругление углов */
+    -webkit-border-radius: 500px;
+    -moz-border-radius: 500px;
+    right: 10px; /* отступ слева */
+    bottom: 10px; /* отступ снизу */
+    cursor: pointer;
+}
+
+    #Button_zakaz p {
+        margin: 10px 0px 0px 0px;
+        text-align: center;
+    }
+
+    #Button_zakaz:hover {
+        opacity: 1;
+        transition: opacity 0.6s;
+    }
+/*                                                                                                                      heder left*/
+
+
+
+/*                                                                                                                      heder center*/
+.center .name {
+    margin: 61.5px 0px 61.5px 0px;
+    padding: 0px;
+    text-shadow: 0.04em 0.04em grey;
+    color: blue;
+    text-align: center;
+}
+/*                                                                                                                      heder center*/
+
+/*                                                                                                                      heder right*/
+
+.right {
+    padding: 0px 0px 0px 0px;
+}
+
+    .right center {
+        margin: 20px;
+        min-width: 260px;
+    }
+
+    .right p {
+        margin: 3px 0px 0px 20px;
+        font-family: courier, verdana, sans-serif;
+        color: white;
+        text-align: center;
+    }
+
+p.phone {
+    margin-left: 30px;
+}
+
+
+/*                                                                                                                      heder right*/
+
+/*                                                                                                                              nav*/
+
+nav {
+    width: 100%;
+    height: 60px;
+    z-index: 2100;
+}
+
+#nav ul {
+    margin: -30px 0px 0px 0px;
+    padding: 10.5px 0px 0px 0px;
+    width: 595px;
+    height: 60px;
+    background-color: #2F4F4F;
+    text-align: center;
+}
+
+#nav li {
+    margin: 0px 0px 0px 0px;
+    width: 60px;
+    height: 60px;
+    display: inline;
+    margin-right: 0px;
+    padding: 16px 16px 19px 16px;
+    font-size: 24px;
+}
+
+    #nav li:hover {
+        background-color: #800000;
+    }
+
+#nav span {
+    margin: 0px 0px 0px 0px;
+    width: 60px;
+    height: 60px;
+}
+
+#nav a {
+    width: 60px;
+    height: 60px;
+    text-decoration: none;
+}
+/*                                                                                                                              nav*/
+
+
+
+/*                                                                                                                              yslygi*/
+#full-body {
+    height: 2000px;
+    padding: 0px 20px 0px 20px;
+}
+
+#Button_up {
+    width: 12%;
+    min-width: 150px;
+    height: 100%;
+    position: fixed; /* фиксированная позиция */
+    padding: 0px; /* отступы */
+    left: 0px; /* отступ слева */
+    bottom: 0px; /* отступ снизу */
+    cursor: pointer;
+    z-index: 1500;
+}
+
+    #Button_up:hover .Button_up_podsvetka {
+        opacity: 0.8;
+        transition: opacity 0.4s;
+        background: grey;
+    }
+
+.Button_up_podsvetka {
+    width: 80%;
+    max-width: 120px;
+    height: 100%;
+    opacity: 0.2; /* прозрачность */
+    padding: 0px; /* отступы */
+    left: 0px; /* отступ слева */
+    bottom: 0px; /* отступ снизу */
+    cursor: pointer;
+}
+
+
+.arrow {
+    width: 0px;
+    height: 0px;
+    border: 50px solid transparent;
+    opacity: 1;
+    border-top-color: #800000;
+    margin: 10px;
+    padding: 0;
+    float: left;
+    position: absolute;
+    bottom: 0px;
+}
+
+    .arrow:before {
+        position: absolute;
+        content: '';
+        width: 0px;
+        height: 0px;
+        border: 30px solid transparent;
+        border-top-color: #800000;
+        display: inline-block;
+        -webkit-transform: translate(-30px, -50px);
+    }
+
+    .arrow.up {
+        transform: rotate(180deg) translate(0px, 25px);
+        /* -webkit-transform: rotate(180deg) translate(0px, 25px);
+    -moz-transform: rotate(180deg) translate(0px, 25px);
+    -o-transform: rotate(180deg) translate(0px, 25px);
+    -ms-transform: rotate(180deg) translate(0px, 25px) translate(0px, 25px); */
+    }
+
+
+.img_divan {
+    min-width: 970px;
+    height: 500px;
+    margin: 0px 0px 0px 0px;
+}
+
+    .img_divan img {
+        width: 100%;
+        height: 500px;
+    }
+/*                                                                                                                              yslygi*/
+
+.content_body {
+    min-width: 970px;
+    height: 4801px;
+    margin: -61px 0px 0px 0px;
+    padding: 0px;
+    background: url(http://www.dejurka.ru/wp-content/uploads/2008/12/woodfloor.jpg) repeat;
+}
+
+.sector {
+    min-width: 970px;
+    height: 89.1%;
+    padding: 0px;
+    position: relative;
+}
+
+.container_1 {
+}
+
+.container_2 {
+    height: 1100px;
+}
+
+.container_3 {
+    height: 1100px;
+}
+
+center {
+    height: 460px;
+}
+
+.all1 {
+    width: 930px;
+    height: 430px;
+    position: relative;
+}
+
+    .all1 img.img_yslygi {
+        min-width: 288px;
+        max-height: 300px;
+        min-height: 200px;
+    }
+
+.div {
+    width: 290px;
+    height: 400px;
+    margin: 0px 10px 0px 10px;
+    position: relative;
+    background-color: #F5F5F5;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    float: left;
+    display: table-cell;
+}
+
+    .div:hover {
+        box-shadow: 0px 0px 25px 5px #BDBDBD;
+        transform: scale(1.05);
+    }
+
+    .div a {
+        font-size: 18px;
+        text-align: justify;
+        line-height: 1.5;
+        color: black;
+        text-decoration: none;
+    }
+
+    .div p {
+        max-height: 180px;
+        min-height: 100px;
+        color: black;
+    }
+
+.view_full {
+    font-size: 20px;
+    font-weight: 700;
+    color: #800000;
+    text-decoration: none;
+    bottom: 0px;
+}
+
+    .view_full:hover {
+        color: #800000;
+        text-shadow: 0.05em 0.05em black;
+        font-size: 21px;
+    }
+
+.all2 {
+    margin: 20px 0px 0px 0px;
+    width: 930px;
+    height: 400px;
+    position: relative;
+}
+
+
+
+.all3 {
+    margin: 20px 0px 0px 0px;
+    padding: 10px 10px 10px 10px;
+    width: 950px;
+    height: 1020px;
+    position: relative;
+}
+
+.all3_div {
+    padding: 10px;
+}
+
+    .all3_div:hover {
+        box-shadow: 0px 0px 25px 5px #BDBDBD;
+        transform: scale(1.02);
+    }
+
+.div7 {
+    width: 900px;
+    height: 320px;
+    margin: 0px 0px 20px 0px;
+    background-color: #F5F5F5;
+    border-radius: 4px;
+    display: table-cell;
+}
+
+    .div7 img {
+        width: 400px;
+        height: 300px;
+        float: right;
+    }
+
+    .div7 p {
+        text-align: left;
+    }
+
+.div8 {
+    width: 900px;
+    height: 300px;
+    margin: 0px 10px 0px 10px;
+    background-color: #F5F5F5;
+    border-radius: 4px;
+    display: table-cell;
+}
+
+    .div8 img {
+        width: 400px;
+        height: 300px;
+        float: left;
+    }
+
+    .div8 p {
+        text-align: left;
+    }
+
+.div9 {
+    width: 900px;
+    height: 300px;
+    margin: 0px 10px 0px 10px;
+    background-color: #F5F5F5;
+    border-radius: 4px;
+    display: table-cell;
+}
+
+    .div9 img {
+        width: 400px;
+        height: 300px;
+        float: right;
+    }
+
+    .div9 p {
+        text-align: left;
+    }
+
+.all4 {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 20px 0px 20px;
+    width: 950px;
+    height: 1000px;
+    text-align: center;
+    position: relative;
+}
+
+    .all4 p {
+        width: 100%;
+        height: 100%;
+        padding: 10px 10px 10px 10px;
+        background-color: white;
+        border-radius: 4px;
+    }
+
+.all5 {
+    margin: 20px 0px 0px 0px;
+    padding: 0px 100px 0px 100px;
+    width: 950px;
+    height: 600px;
+    position: relative;
+    display: inline-block;
+    font-size: 20px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+    .all5 li {
+        width: 600px;
+        height: 40px;
+    }
+
+    .all5 label {
+        float: left;
+        margin: 5px 5px 5px 5px;
+        text-shadow: 0.06em 0.06em grey;
+    }
+
+    .all5 input {
+        width: 400px;
+        height: 40px;
+        float: right;
+        text-transform: none;
+        font-family: courier, verdana, sans-serif;
+        border-radius: 10px;
+        box-shadow: 5px 5px 20px 0px rgba(0,0,0,0.6);
+    }
+
+    .all5 textarea {
+        margin: 20px 0px 40px 0px;
+        width: 600px;
+        max-width: 600px;
+        height: 300px;
+        max-height: 430px;
+        line-height: 1.5;
+        box-shadow: 5px 5px 20px 0px rgba(0,0,0,0.6);
+    }
+
+    .all5 button {
+        width: 300px;
+        height: 60px;
+        font-size: 30px;
+        color: black;
+        background-color: #800000;
+        border: 0px;
+        border-radius: 4px;
+        box-shadow: inset 0px 0px 20px 0px black;
+    }
+
+        .all5 button:hover {
+            border: 2px solid black;
+            box-shadow: inset 0px 0px 20px 1px black;
+            transform: scale(1.05);
+        }
+
+/*                                                                                                                      подвал, футер*/
+#footer {
+    position: relative;
+    bottom: 0;
+    height: auto;
+    width: 100%;
+    z-index: 1000;
+}
+
+#P_main {
+    bottom: 0px;
+    min-width: 1000px;
+    height: 150px;
+    padding-left: 0px;
+    margin-bottom: 0px;
+    background-color: #22252d;
+}
+
+#ul_footer {
+    padding-right: 0px;
+    padding-top: 25px;
+    margin-bottom: 0px;
+    text-align: right;
+}
+
+    #ul_footer a {
+        padding-left: 10px;
+        font-size: 12px;
+        color: blue;
+    }
+
+
+
+#P_main p.footer_p2 {
+    min-width: 150px;
+    font-size: 12px;
+    color: red;
+    text-align: right;
+    margin-top: 50px;
+    padding-right: 10px;
+}

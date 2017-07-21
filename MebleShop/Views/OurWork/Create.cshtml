@@ -1,0 +1,44 @@
+﻿@model MebleShop.Models.Entities.OurWorks.Work
+@{
+    ViewBag.Title = "Create";
+}
+
+@using (Html.BeginForm("Create", "OurWork", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <h2>Форма создания</h2>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Description)
+        </div>
+        <br />
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.Description, 
+           new { @class = "form-control", rows = 10 })
+            <br />
+            @Html.ValidationMessageFor(model => model.Description,"", new { @class = "text-danger" })
+        </div>
+        <br />
+        <div class="editor-label">
+            <label>Файлы:</label>
+        </div>
+        <br />
+        <div class="editor-field">
+            <input type="file" name="file" multiple="multiple" />
+        </div>
+        <br />
+        <p>
+            <input type="submit" value="Создать" class="btn btn-success" style="margin-right:5px" />
+            @Html.ActionLink("Назад", "Index", new { }, htmlAttributes: new { @class = "btn btn-danger" })
+        </p>
+    </fieldset>
+}
+@*<div>
+    @Html.ActionLink("Назад", "Index", new { }, htmlAttributes: new { @class = "btn btn-warning" })
+</div>*@
+@section Scripts {
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+}

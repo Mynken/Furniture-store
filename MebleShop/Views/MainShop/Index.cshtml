@@ -1,0 +1,161 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainShopLayout.cshtml";
+}
+
+<div id="full-body" class="col-sm-12 col-md-12 col-lg-12">
+
+        <div class="col-sm-12 col-md-12 col-lg-12 sector">
+            <div class="container_1">
+                <div class="yslygi">
+                    <h3>НАШИ РАБОТЫ</h3>
+                </div>
+                <center>
+                    <div class="all1">
+                        @Html.Action("Partial", "OurWork", new { id = 4 })
+                        @*<a href="our_services/our_services.html">
+                            <div class="div div1">
+                                <img src="~/fonts/images/Furniture_photo/Kitchen/kitchen_1.jpg" alt="#" align="left" class="img-thumbnail img_yslygi"><p class="overflow-ellipsis">
+                                    кухни adfasdf ger gthhtyjtjt
+                                    hsgdf  a fsdfsdfg ethrt yj e
+                                    rgfgsdfg thh rhsrageg dfh rth
+                                    dh dh rth strj rjshd h hsthet
+                                    h haer hdfadfasdf ger gthhtyj
+                                    tjthsgdf  a fsdfsdfg ethrt yj e . . .
+                                </p>
+                            </div>
+                        </a>*@
+
+                        @Html.Action("Partial", "OurWork", new { id = 2 })
+
+                        @*<a href="our_services/our_services.html">
+                            <div class="div div2">
+                                <img src="~/fonts/images/Furniture_photo/Wardrobe/wardrobe_1.jpg" alt="#" align="left" class="img-thumbnail img_yslygi">
+                                <p>
+                                    шкафы dfgdgdfg df dfg sdfgsdfgsdg
+                                    dgsd fgdhsdfg sdfgdfg sdfasfsdf sfsfff ast . . .
+                                </p>
+                            </div>
+                        </a>*@
+
+                        @Html.Action("Partial", "OurWork", new { id = 6 })
+
+                        @*<a href="our_services/our_services.html">
+                            <div class="div div3">
+                                <img src="~/fonts/images/Furniture_photo/Table/table_1.jpg" alt="#" align="left" class="img-thumbnail img_yslygi">
+                            <p>столы gdfgd fd kkork agops dflgs df ;4g kld;sfk gdfmg dmfg lsdjf dklfgjjd fmg . . .</p>
+                             </div>
+                        </a>*@
+
+
+                    </div>
+
+                    @*<a class="view_full" href="our_services/our_services.html"><em>Смотреть еще -></em></a>*@
+                    @Html.ActionLink("Смотреть еще", "Index", "OurWork", new {}, htmlAttributes: new { @class = "btn btn-success" })
+                </center>
+
+                <div class="show_more">
+
+                </div>
+
+            </div>
+
+            <div class="col-sm-12 col-md-12 col-lg-12 sector">
+                <div class="container_1">
+                    <div class="yslygi">
+                        <h3>НАШИ УСЛУГИ</h3>
+                    </div>
+                    <center>
+
+                        <div class="all1">
+                            <a href="our_services/our_services.html">
+                                <div class="div div1">
+                                    <img src="~/fonts/images/Furniture_photo/Kitchen/kitchen_1.jpg" alt="#" align="left" class="img-thumbnail img_yslygi"><p class="overflow-ellipsis">
+                                        кухни adfasdf ger gthhtyjtjt
+                                        hsgdf  a fsdfsdfg ethrt yj e
+                                        rgfgsdfg thh rhsrageg dfh rth
+                                        dh dh rth strj rjshd h hsthet
+                                        h haer hdfadfasdf ger gthhtyj
+                                        tjthsgdf  a fsdfsdfg ethrt yj e . . .
+                                    </p>
+                                </div>
+                            </a>
+                            <a href="our_services/our_services.html">
+                                <div class="div div2">
+                                    <img src="~/fonts/images/Furniture_photo/Wardrobe/wardrobe_3.jpg" alt="#" align="left" class="img-thumbnail img_yslygi"><p>
+                                        шкафы dfgdgdfg df dfg sdfgsdfgsdg
+                                        dgsd fgdhsdfg sdfgdfg sdfasfsdf sfsfff ast . . .
+                                    </p>
+                                </div>
+                            </a>
+                            <a href="our_services/our_services.html">
+                            <div class="div div3">
+                                <img src="~/fonts/images/Furniture_photo/Table/table_2.jpg" alt="#" align="left" class="img-thumbnail img_yslygi">
+                                <p>столы gdfgd fd kkork agops dflgs df ;4g kld;sfk gdfmg dmfg lsdjf dklfgjjd fmg . . .</p>
+                                </div>
+                            </a>
+
+
+                        </div>
+
+                        @*<a class="view_full" href="our_services/our_services.html"><em>Смотреть еще -></em></a>*@
+                        @Html.ActionLink("Смотреть еще", "MoreService", new { }, htmlAttributes: new { @class = "btn btn-success" })
+                    </center>
+
+                    <div class="show_more">
+
+                    </div>
+
+                </div>
+
+                <div class="container_2">
+
+
+
+                    <div class="container_2">
+                        <div class="pochemy">
+                            <h3>ПОЧЕМУ МЫ?</h3>
+                        </div>
+
+                        <center>
+                            <div class="all3">
+
+                                <div class="all3_div div7">
+                                    <img src="~/fonts/images/Our_achivements/achivement_1.jpg" alt="#" align="right" class="img-thumbnail">
+                                    <p>Здесь будут писаться преимущества компании, вместе с фотографиями того как выполняются заказы</p>
+                                </div>
+                                <br>
+
+                                <div class="all3_div div8">
+                                    <img src="~/fonts/images/Our_achivements/achivement_1.jpg" alt="#" align="right" class="img-thumbnail">
+                                    <p>Здесь будут писаться преимущества компании, вместе с фотографиями того как выполняются заказы</p>
+                                </div>
+                                <br>
+
+                                <div class="all3_div div9">
+                                    <img src="~/fonts/images/Our_achivements/achivement_1.jpg" alt="#" align="right" class="img-thumbnail">
+                                    <p>Здесь будут писаться преимущества компании, вместе с фотографиями того как выполняются заказы</p>
+                                </div>
+
+                            </div>
+                        </center>
+                    </div>
+
+                    <div class="container_3">
+                        <div class="about">
+                            <h3>О КОМПАНИ</h3>
+                        </div>
+
+                        <center>
+                            <div class="all4">
+                                <p>написать чтото о компании</p>
+                            </div>
+                        </center>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-1 col-md-1 col-lg-1"></div>
+        </div>
+
+    </div>

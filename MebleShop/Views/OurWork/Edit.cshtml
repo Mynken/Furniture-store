@@ -1,0 +1,83 @@
+﻿@model MebleShop.Models.Entities.OurWorks.Work
+@{
+    ViewBag.Title = "Edit";
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+}
+
+@using (Html.BeginForm("Edit", "OurWork", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <h2>Редактирование</h2>
+
+        @Html.HiddenFor(model => model.WorkId)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Description)
+        </div>
+        <br />
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.Description,
+           new { @class = "form-control", rows = 10 })
+            @Html.ValidationMessageFor(model => model.Description)
+        </div>
+        <br />
+        <div class="editor-label">
+            <label>Файлы:</label>
+        </div>
+        <br />
+        <div class="editor-field">
+            <input type="file" name="file" multiple="multiple" />
+            <ul class="attachment">
+                @foreach (var item in Model.FileWorkDetails)
+                {
+                    <li>
+                       
+                        <img class="img-thumbnail" width="150" height="150"
+                             src="/OurWork/GetImage/?workId=@item.Id">
+                             @*src="@Url.Action("GetImage", "OurWork",
+                        new { item.Id })" />*@
+                        <a class="title" href="/OurWork/Download/?p=@(item.Id + item.Extension)&d=@item.FileName">@item.FileName</a>
+                        <a href="javascript:void(0);" data-id="@item.Id" class="deleteItem">X</a>
+                    </li>
+                }
+            </ul>
+        </div>       
+        <p>
+            <input type="submit" value="Сохранить" class="btn btn-success" style="margin-right:5px" />
+            @Html.ActionLink("Назад", "Index", new { }, htmlAttributes: new { @class = "btn btn-danger" })
+        </p>
+    </fieldset>
+}
+@*<div>
+    @Html.ActionLink("Назад", "Index")
+</div>*@
+@section Scripts {
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script>
+        $('.deleteItem').click(function (e) {
+            e.preventDefault();
+            var $ctrl = $(this);
+            if (confirm('Вы уверены, что хотите удалить этот файл?')) {
+                $.ajax({
+                    url: '@Url.Action("DeleteFile")',
+                    type: 'POST',
+                    data: { id: $(this).data('id') }
+                }).done(function (data) {
+                    if (data.Result == "OK") {
+                        $ctrl.closest('li').remove();
+                    }
+                    else if (data.Result.Message) {
+                        alert(data.Result.Message);
+                    }
+                }).fail(function () {
+                    alert("Что-то пошло не так. Пожалуйста, попробуйте еще раз");
+                })
+
+            }
+        });
+    </script>
+}
