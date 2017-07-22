@@ -224,7 +224,7 @@ namespace MebleShop.Controllers
             }
         }
 
-        public ActionResult Partial(int? id)
+        public ActionResult PartialWork(int? id)
         {
             if (id == null)
             {

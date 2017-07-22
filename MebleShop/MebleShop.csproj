@@ -316,7 +316,8 @@
     <Content Include="Views\OurService\Create.cshtml" />
     <Content Include="Views\OurService\Edit.cshtml" />
     <Content Include="Views\OurService\Delete.cshtml" />
-    <Content Include="Views\OurWork\Partial.cshtml" />
+    <Content Include="Views\OurWork\PartialWork.cshtml" />
+    <Content Include="Views\OurService\PartialService.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\Upload_service\" />

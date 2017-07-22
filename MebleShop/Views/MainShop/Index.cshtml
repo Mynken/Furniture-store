@@ -13,7 +13,7 @@
                 </div>
                 <center>
                     <div class="all1">
-                        @Html.Action("Partial", "OurWork", new { id = 4 })
+                        @Html.Action("PartialWork", "OurWork", new { id = 4 })
                         @*<a href="our_services/our_services.html">
                             <div class="div div1">
                                 <img src="~/fonts/images/Furniture_photo/Kitchen/kitchen_1.jpg" alt="#" align="left" class="img-thumbnail img_yslygi"><p class="overflow-ellipsis">
@@ -27,7 +27,7 @@
                             </div>
                         </a>*@
 
-                        @Html.Action("Partial", "OurWork", new { id = 2 })
+                        @Html.Action("PartialWork", "OurWork", new { id = 2 })
 
                         @*<a href="our_services/our_services.html">
                             <div class="div div2">
@@ -39,7 +39,7 @@
                             </div>
                         </a>*@
 
-                        @Html.Action("Partial", "OurWork", new { id = 6 })
+                        @Html.Action("PartialWork", "OurWork", new { id = 6 })
 
                         @*<a href="our_services/our_services.html">
                             <div class="div div3">
@@ -69,7 +69,9 @@
                     <center>
 
                         <div class="all1">
-                            <a href="our_services/our_services.html">
+                            @Html.Action("PartialService", "OurService", new { id = 1 })
+
+                            @*<a href="our_services/our_services.html">
                                 <div class="div div1">
                                     <img src="~/fonts/images/Furniture_photo/Kitchen/kitchen_1.jpg" alt="#" align="left" class="img-thumbnail img_yslygi"><p class="overflow-ellipsis">
                                         кухни adfasdf ger gthhtyjtjt
@@ -80,23 +82,27 @@
                                         tjthsgdf  a fsdfsdfg ethrt yj e . . .
                                     </p>
                                 </div>
-                            </a>
-                            <a href="our_services/our_services.html">
+                            </a>*@
+
+                            @Html.Action("PartialService", "OurService", new { id = 2 })
+
+                            @*<a href="our_services/our_services.html">
                                 <div class="div div2">
                                     <img src="~/fonts/images/Furniture_photo/Wardrobe/wardrobe_3.jpg" alt="#" align="left" class="img-thumbnail img_yslygi"><p>
                                         шкафы dfgdgdfg df dfg sdfgsdfgsdg
                                         dgsd fgdhsdfg sdfgdfg sdfasfsdf sfsfff ast . . .
                                     </p>
                                 </div>
-                            </a>
-                            <a href="our_services/our_services.html">
+                            </a>*@
+
+                            @Html.Action("PartialService", "OurService", new { id = 3 })
+
+                            @*<a href="our_services/our_services.html">
                             <div class="div div3">
                                 <img src="~/fonts/images/Furniture_photo/Table/table_2.jpg" alt="#" align="left" class="img-thumbnail img_yslygi">
                                 <p>столы gdfgd fd kkork agops dflgs df ;4g kld;sfk gdfmg dmfg lsdjf dklfgjjd fmg . . .</p>
                                 </div>
-                            </a>
-
-
+                            </a>*@
                         </div>
 
                         @*<a class="view_full" href="our_services/our_services.html"><em>Смотреть еще -></em></a>*@

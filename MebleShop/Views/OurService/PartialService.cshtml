@@ -1,0 +1,26 @@
+﻿@model MebleShop.Models.Entities.OurServices.Service
+@{
+
+    Layout = null;
+}
+<a href="our_services/our_services.html">
+    <div class="div div2">
+        @foreach (var item in Model.FileServiceDetails.Take(1))
+        {
+            <img class="img-thumbnail img_yslygi" align="left"
+                 src="/OurService/GetImage/?serviceId=@item.Id">
+        }
+        <p>
+            @if (Model.Description.Length > 102)
+            {
+                @String.Concat(Model.Description.Substring(0, 102), "...")
+            }
+            else
+            {
+                @Html.DisplayFor(modelItem => modelItem.Description)
+            }
+        </p>
+    </div>
+</a>
+
+

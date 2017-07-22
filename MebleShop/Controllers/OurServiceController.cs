@@ -226,13 +226,26 @@ namespace MebleShop.Controllers
                 return Json(new { Result = "ERROR", Message = ex.Message });
             }
         }
-
-        public ActionResult Error()
+        public ActionResult PartialService(int? id)
         {
-            //ViewBag.Message = TempData["message"];
-            //ViewBag.Message = "Неправильное расширине файла для загрузки(только .jpg)";
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Service service = db.Services.Include(s => s.FileServiceDetails).SingleOrDefault(x => x.ServiceId == id);
+            if (service == null)
+            {
+                return HttpNotFound();
+            }
+            return View(service);
         }
+
+        //public ActionResult Error()
+        //{
+        //    //ViewBag.Message = TempData["message"];
+        //    //ViewBag.Message = "Неправильное расширине файла для загрузки(только .jpg)";
+        //    return View();
+        //}
         protected override void Dispose(bool disposing)
         {
             db.Dispose();
