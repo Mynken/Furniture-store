@@ -52,12 +52,12 @@
                     </div>
 
                     @*<a class="view_full" href="our_services/our_services.html"><em>Смотреть еще -></em></a>*@
-                    @Html.ActionLink("Смотреть еще", "Index", "OurWork", new {}, htmlAttributes: new { @class = "btn btn-success" })
+                    @Html.ActionLink("Смотреть еще", "UserWorkIndex", "OurWork", new {}, htmlAttributes: new { @class = "btn btn-success" })
                 </center>
 
-                <div class="show_more">
+                @*<div class="show_more">
 
-                </div>
+                </div>*@
 
             </div>
 
@@ -67,7 +67,6 @@
                         <h3>НАШИ УСЛУГИ</h3>
                     </div>
                     <center>
-
                         <div class="all1">
                             @Html.Action("PartialService", "OurService", new { id = 1 })
 
@@ -104,21 +103,11 @@
                                 </div>
                             </a>*@
                         </div>
-
-                        @*<a class="view_full" href="our_services/our_services.html"><em>Смотреть еще -></em></a>*@
-                        @Html.ActionLink("Смотреть еще", "MoreService", new { }, htmlAttributes: new { @class = "btn btn-success" })
+                        @Html.ActionLink("Смотреть еще", "UserServiceIndex", "OurService", new { }, htmlAttributes: new { @class = "btn btn-success" })
                     </center>
-
-                    <div class="show_more">
-
-                    </div>
-
                 </div>
 
                 <div class="container_2">
-
-
-
                     <div class="container_2">
                         <div class="pochemy">
                             <h3>ПОЧЕМУ МЫ?</h3>

@@ -252,12 +252,10 @@ namespace MebleShop.Controllers
             }
         }
 
-        //public ActionResult Error()
-        //{
-        //    //ViewBag.Message = TempData["message"];
-        //    //ViewBag.Message = "Неправильное расширине файла для загрузки(только .jpg)";
-        //    return View();
-        //}
+        public ActionResult UserWorkIndex()
+        {
+            return View(db.Works.ToList());
+        }
         protected override void Dispose(bool disposing)
         {
             db.Dispose();

@@ -20,6 +20,11 @@ namespace MebleShop.Controllers
             return View(db.Services.ToList());
         }
 
+        public ActionResult UserServiceIndex()
+        {
+            return View(db.Services.ToList());
+        }
+
         public ActionResult Create()
         {
             return View();

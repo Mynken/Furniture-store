@@ -1,0 +1,25 @@
+﻿@model IEnumerable<MebleShop.Models.Entities.OurWorks.Work>
+@{
+    ViewBag.Title = "UserWorkIndex";
+    Layout = "~/Views/Shared/_MainShopLayout.cshtml";
+}
+
+@*<h2>UserWorkIndex</h2>*@
+<div class="container_1">
+    <div class="yslygi">
+        <h3>НАШИ РАБОТЫ</h3>
+    </div>
+    <center>
+        <div class="all1">
+            @foreach (var item in Model)
+            {
+                @Html.Action("PartialWork", "OurWork", new { id = item.WorkId })
+            }
+</div>
+    </center>
+</div>
+
+
+
+
+

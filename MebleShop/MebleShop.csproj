@@ -318,6 +318,8 @@
     <Content Include="Views\OurService\Delete.cshtml" />
     <Content Include="Views\OurWork\PartialWork.cshtml" />
     <Content Include="Views\OurService\PartialService.cshtml" />
+    <Content Include="Views\OurWork\UserWorkIndex.cshtml" />
+    <Content Include="Views\OurService\UserServiceIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\Upload_service\" />
