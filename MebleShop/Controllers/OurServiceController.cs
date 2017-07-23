@@ -25,6 +25,20 @@ namespace MebleShop.Controllers
             return View(db.Services.ToList());
         }
 
+        public ActionResult UserServiceDetails(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Service service = db.Services.Include(s => s.FileServiceDetails).SingleOrDefault(x => x.ServiceId == id);
+            if (service == null)
+            {
+                return HttpNotFound();
+            }
+            return View(service);
+        }
+
         public ActionResult Create()
         {
             return View();

@@ -8,8 +8,7 @@
     
         <div class="all1" style="width: 1000px; height: auto; margin: 0 auto; padding: 0;">
             @Html.TextAreaFor(model => model.Description,
-           new { @class = "form-control", rows = 10 })
-            @Html.ValidationMessageFor(model => model.Description)
+           new { @class = "form-control", rows = 10, @readonly = true, @style = "resize: none;" })
         </div>
         <br />
         <div class="editor-label">
@@ -22,13 +21,13 @@
                 {
                     <li>
 
-                        <img class="img-thumbnail" width="auto" height="auto" style="min-width:700px; min-height:400px; display: block;margin: 0 auto;"
+                        <img class="img-thumbnail" @*width="auto" height="auto"*@ style="min-width:700px; min-height:400px; display: block;margin: 0 auto;"
                              src="/OurWork/GetImage/?workId=@item.Id">
                         <br />
                     </li>
                 }
             </ul>
         </div>
-        <p>
+        <p class="text-center">
             <a class="btn btn-primary" href="javascript:void(0);" onclick="history.go(-1);">Назад</a>
         </p>

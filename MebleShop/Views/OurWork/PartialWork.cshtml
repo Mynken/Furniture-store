@@ -1,10 +1,8 @@
 ﻿@model MebleShop.Models.Entities.OurWorks.Work
 @{
-
     Layout = null;
-
 }
-@foreach (var work in Model.FileWorkDetails)
+@foreach (var work in Model.FileWorkDetails.Take(1))
 {
     <a href="~/OurWork/UserWorkDetails/@work.WorkId">
 

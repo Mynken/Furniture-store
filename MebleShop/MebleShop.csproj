@@ -320,6 +320,7 @@
     <Content Include="Views\OurService\UserServiceIndex.cshtml" />
     <Content Include="Views\MainShop\Contact.cshtml" />
     <Content Include="Views\OurWork\UserWorkDetails.cshtml" />
+    <Content Include="Views\OurService\UserServiceDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\Upload_service\" />

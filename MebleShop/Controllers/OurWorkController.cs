@@ -118,34 +118,36 @@ namespace MebleShop.Controllers
                 for (int i = 0; i < Request.Files.Count; i++)
                 {
                     var file = Request.Files[i];
-
-                    if (file != null && file.ContentLength > 0)
+                    if (work.Description != null) // rewrite
                     {
-                        var fileName = Path.GetFileName(file.FileName);
-                        FileWorkDetail fileDetail = new FileWorkDetail()
+                        if (file != null && file.ContentLength > 0)
                         {
-                            FileName = fileName,
-                            Extension = Path.GetExtension(fileName),
-                            Id = Guid.NewGuid(),
-                            WorkId = work.WorkId
-                        };
-                        if (fileDetail.Extension == ".jpg")
-                        {
-                            var path = Path.Combine(Server.MapPath("~/App_Data/Upload_work/"), fileDetail.Id + fileDetail.Extension);
-                            file.SaveAs(path);
+                            var fileName = Path.GetFileName(file.FileName);
+                            FileWorkDetail fileDetail = new FileWorkDetail()
+                            {
+                                FileName = fileName,
+                                Extension = Path.GetExtension(fileName),
+                                Id = Guid.NewGuid(),
+                                WorkId = work.WorkId
+                            };
+                            if (fileDetail.Extension == ".jpg")
+                            {
+                                var path = Path.Combine(Server.MapPath("~/App_Data/Upload_work/"), fileDetail.Id + fileDetail.Extension);
+                                file.SaveAs(path);
+                            }
+                            else
+                            {
+                                TempData["ErrorMessage"] = "Неправильное расширине файла для загрузки(только .jpg)";
+                                return RedirectToAction("Edit");
+                            }
+                            db.Entry(fileDetail).State = EntityState.Added;
                         }
                         else
                         {
-                            TempData["ErrorMessage"] = "Неправильное расширине файла для загрузки(только .jpg)";
-                            return RedirectToAction("Edit");
+                            //TempData["ErrorMessage"] = "Должна быть минимум 1 фотография";
+                            //return RedirectToAction("Edit");
                         }
-                        db.Entry(fileDetail).State = EntityState.Added;
-                    }
-                    else
-                    {
-                        TempData["ErrorMessage"] = "Должна быть минимум 1 фотография";
-                        return RedirectToAction("Create");
-                    }
+                    }                   
                 }
 
                 db.Entry(work).State = EntityState.Modified;

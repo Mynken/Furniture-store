@@ -3,24 +3,28 @@
 
     Layout = null;
 }
-<a href="our_services/our_services.html">
-    <div class="div div2" style="margin-bottom: 30px;">
-        @foreach (var item in Model.FileServiceDetails.Take(1))
-        {
-            <img class="img-thumbnail img_yslygi" align="left"
-                 src="/OurService/GetImage/?serviceId=@item.Id">
-        }
-        <p>
-            @if (Model.Description.Length > 170)
-            {
-                @String.Concat(Model.Description.Substring(0, 170), "...")
-            }
-            else
-            {
-                @Html.DisplayFor(modelItem => modelItem.Description)
-            }
-        </p>
-    </div>
-</a>
+@foreach (var service in Model.FileServiceDetails.Take(1))
+{
+    <a href="~/OurService/UserServiceDetails/@service.ServiceId">
 
 
+        <div class="div div2" style="margin-bottom: 30px;">
+            @foreach (var item in Model.FileServiceDetails.Take(1))
+            {
+                <img class="img-thumbnail img_yslygi" align="left"
+                     src="/OurService/GetImage/?serviceId=@item.Id">
+            }
+            <p>
+                @if (Model.Description.Length > 170)
+                {
+                    @String.Concat(Model.Description.Substring(0, 170), "...")
+                }
+                else
+                {
+                    @Html.DisplayFor(modelItem => modelItem.Description)
+                }
+            </p>
+        </div>
+    </a>
+
+}
