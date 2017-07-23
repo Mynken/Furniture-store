@@ -13,8 +13,6 @@
     <script src="http://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
-    @*<link rel="shortcut icon" href="img/logotip_stranici.png" />*@
-
     @Styles.Render("~/Content/Shop/css")
     @Scripts.Render("~/bundles/shop")
 
@@ -49,11 +47,11 @@
         <nav id="nav" class="col-sm-12 col-md-12 col-lg-12">
             <center>
                 <ul>
-                    <a><li>Главная</li></></a>
-                    <a><li>Услуги</li></></a>
-                    <a><li>Цены</li></></a>
-                    <a><li>Отзывы</li></></a>
-                    <a><li>Контакты</li></></a>
+                    <li>@Html.ActionLink("Главная", "Index", "MainShop")</li>
+                    <li>@Html.ActionLink("Портфолио", "UserWorkIndex", "OurWork")</li>
+                    <li>@Html.ActionLink("Услуги", "UserServiceIndex", "OurService")</li>
+                    <li>@Html.ActionLink("Отзывы", "Create", "Feedbacks")</li>
+                    <li>@Html.ActionLink("Контакты", "Contact", "MainShop")</li>
                 </ul>
             </center>
         </nav>
@@ -100,3 +98,4 @@
             @RenderSection("scripts", required: false)
 </body>
 </html>
+

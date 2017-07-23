@@ -10,7 +10,7 @@ namespace MebleShop.Controllers
             return View();
         }
 
-        public ActionResult News()
+        public ActionResult Contact()
         {
             return View();
         }

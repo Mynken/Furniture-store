@@ -11,9 +11,9 @@
                  src="/OurService/GetImage/?serviceId=@item.Id">
         }
         <p>
-            @if (Model.Description.Length > 102)
+            @if (Model.Description.Length > 170)
             {
-                @String.Concat(Model.Description.Substring(0, 102), "...")
+                @String.Concat(Model.Description.Substring(0, 170), "...")
             }
             else
             {

@@ -14,31 +14,7 @@
                 <center>
                     <div class="all1">
                         @Html.Action("PartialWork", "OurWork", new { id = 4 })
-                        @*<a href="our_services/our_services.html">
-                            <div class="div div1">
-                                <img src="~/fonts/images/Furniture_photo/Kitchen/kitchen_1.jpg" alt="#" align="left" class="img-thumbnail img_yslygi"><p class="overflow-ellipsis">
-                                    кухни adfasdf ger gthhtyjtjt
-                                    hsgdf  a fsdfsdfg ethrt yj e
-                                    rgfgsdfg thh rhsrageg dfh rth
-                                    dh dh rth strj rjshd h hsthet
-                                    h haer hdfadfasdf ger gthhtyj
-                                    tjthsgdf  a fsdfsdfg ethrt yj e . . .
-                                </p>
-                            </div>
-                        </a>*@
-
                         @Html.Action("PartialWork", "OurWork", new { id = 2 })
-
-                        @*<a href="our_services/our_services.html">
-                            <div class="div div2">
-                                <img src="~/fonts/images/Furniture_photo/Wardrobe/wardrobe_1.jpg" alt="#" align="left" class="img-thumbnail img_yslygi">
-                                <p>
-                                    шкафы dfgdgdfg df dfg sdfgsdfgsdg
-                                    dgsd fgdhsdfg sdfgdfg sdfasfsdf sfsfff ast . . .
-                                </p>
-                            </div>
-                        </a>*@
-
                         @Html.Action("PartialWork", "OurWork", new { id = 6 })
 
                         @*<a href="our_services/our_services.html">
@@ -47,8 +23,6 @@
                             <p>столы gdfgd fd kkork agops dflgs df ;4g kld;sfk gdfmg dmfg lsdjf dklfgjjd fmg . . .</p>
                              </div>
                         </a>*@
-
-
                     </div>
 
                     @*<a class="view_full" href="our_services/our_services.html"><em>Смотреть еще -></em></a>*@
@@ -154,3 +128,12 @@
         </div>
 
     </div>
+@section Scripts {
+    <script type="text/javascript">
+           $(document).ready(function () {
+                    $('html, body').animate({
+                     scrollTop: $('h3').offset().top
+                    }, 2000);
+        });
+    </script>
+}

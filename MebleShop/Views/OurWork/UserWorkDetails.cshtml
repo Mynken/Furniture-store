@@ -1,0 +1,34 @@
+﻿@model MebleShop.Models.Entities.OurWorks.Work
+@{
+    ViewBag.Title = "UserWorkDetails";
+    Layout = "~/Views/Shared/_MainShopLayout.cshtml";
+}
+
+        <h3>Описание</h3>
+    
+        <div class="all1" style="width: 1000px; height: auto; margin: 0 auto; padding: 0;">
+            @Html.TextAreaFor(model => model.Description,
+           new { @class = "form-control", rows = 10 })
+            @Html.ValidationMessageFor(model => model.Description)
+        </div>
+        <br />
+        <div class="editor-label">
+            <h3>Фото</h3>
+        </div>
+        <br />
+        <div class="editor-field">
+            <ul class="attachment">
+                @foreach (var item in Model.FileWorkDetails)
+                {
+                    <li>
+
+                        <img class="img-thumbnail" width="auto" height="auto" style="min-width:700px; min-height:400px; display: block;margin: 0 auto;"
+                             src="/OurWork/GetImage/?workId=@item.Id">
+                        <br />
+                    </li>
+                }
+            </ul>
+        </div>
+        <p>
+            <a class="btn btn-primary" href="javascript:void(0);" onclick="history.go(-1);">Назад</a>
+        </p>

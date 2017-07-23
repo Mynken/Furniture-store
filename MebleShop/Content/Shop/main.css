@@ -192,7 +192,7 @@ nav {
 #nav ul {
     margin: -30px 0px 0px 0px;
     padding: 10.5px 0px 0px 0px;
-    width: 595px;
+    width: 695px;
     height: 60px;
     background-color: #2F4F4F;
     text-align: center;
@@ -346,7 +346,7 @@ center {
 
     .all1 img.img_yslygi {
         min-width: 288px;
-        max-height: 300px;
+        max-height: 200px;
         min-height: 200px;
     }
 

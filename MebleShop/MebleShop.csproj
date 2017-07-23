@@ -306,8 +306,6 @@
     <Content Include="Views\Home\Delete.cshtml" />
     <Content Include="Views\Shared\_MainShopLayout.cshtml" />
     <Content Include="Views\MainShop\Index.cshtml" />
-    <Content Include="Views\MainShop\News.cshtml" />
-    <Content Include="Views\MainShop\MoreService.cshtml" />
     <Content Include="Views\OurWork\Index.cshtml" />
     <Content Include="Views\OurWork\Create.cshtml" />
     <Content Include="Views\OurWork\Edit.cshtml" />
@@ -320,6 +318,8 @@
     <Content Include="Views\OurService\PartialService.cshtml" />
     <Content Include="Views\OurWork\UserWorkIndex.cshtml" />
     <Content Include="Views\OurService\UserServiceIndex.cshtml" />
+    <Content Include="Views\MainShop\Contact.cshtml" />
+    <Content Include="Views\OurWork\UserWorkDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\Upload_service\" />

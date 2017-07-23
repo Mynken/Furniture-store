@@ -4,24 +4,29 @@
     Layout = null;
 
 }
-<a href="our_services/our_services.html">
-    <div class="div div2" style="margin-bottom: 30px;">
-        @foreach (var item in Model.FileWorkDetails.Take(1))
-        {
+@foreach (var work in Model.FileWorkDetails)
+{
+    <a href="~/OurWork/UserWorkDetails/@work.WorkId">
+
+
+        <div class="div div2" style="margin-bottom: 30px;">
+            @foreach (var item in Model.FileWorkDetails.Take(1))
+            {
                 <img class="img-thumbnail img_yslygi" align="left"
                      src="/OurWork/GetImage/?workId=@item.Id">
-        }
-        <p>
-            @if (Model.Description.Length > 102)
-            {
-                @String.Concat(Model.Description.Substring(0, 102), "...")
             }
-            else
-            {
-                @Html.DisplayFor(modelItem => modelItem.Description)
-            }            
-           
-        </p>
-    </div>
-</a>
+            <p>
+                @if (Model.Description.Length > 170)
+                {
+                    @String.Concat(Model.Description.Substring(0, 170), "...")
+                }
+                else
+                {
+                    @Html.DisplayFor(modelItem => modelItem.Description)
+                }
+
+            </p>
+        </div>
+    </a>
+}
 

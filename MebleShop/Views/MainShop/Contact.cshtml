@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_MainShopLayout.cshtml";
+}
+
+<h3>Контакты</h3>
+
+    <div class="all1" style="padding-left: 50px; font-size: 20px;">
+        <address>
+            Киев<br />
+            Святошин, улица им. Кирила<br />
+            <abbr title="Phone">P:</abbr>
+            +38-097-402-44-81
+            <abbr title="Phone">P:</abbr>
+            +38-097-402-44-81
+        </address>
+
+        <address>
+            <strong>Тех. поддержка:</strong>   <a href="mailto:futuresoftware_fsw@gmail.com">Futuresoftware_fsw@gmail.com</a><br />
+            <strong>По вопросам маркетинга:</strong> <a href="mailto:futuresoftware_fsw@gmail.com">Futuresoftware_fsw@gmail.com</a>
+        </address>
+
+        </div>
+@section Scripts {
+    <script type="text/javascript">
+           $(document).ready(function () {
+                    $('html, body').animate({
+                     scrollTop: $('h3').offset().top
+                    }, 2000);
+        });
+    </script>
+}

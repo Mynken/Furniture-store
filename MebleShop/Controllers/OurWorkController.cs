@@ -256,6 +256,19 @@ namespace MebleShop.Controllers
         {
             return View(db.Works.ToList());
         }
+        public ActionResult UserWorkDetails(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Work work = db.Works.Include(s => s.FileWorkDetails).SingleOrDefault(x => x.WorkId == id);
+            if (work == null)
+            {
+                return HttpNotFound();
+            }
+            return View(work);
+        }
         protected override void Dispose(bool disposing)
         {
             db.Dispose();
