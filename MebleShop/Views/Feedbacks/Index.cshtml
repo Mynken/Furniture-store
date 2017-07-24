@@ -1,58 +1,96 @@
 ﻿@model IEnumerable<MebleShop.Models.Entities.Feedback>
 
 @{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Home Page";
 }
 
-<h2>Index</h2>
+<div class="jumbotron" style="padding-bottom:30px">
+    <h1>Админ панель</h1>
+    <p class="lead"><em>Здесь отображены непрочитанные заказы пользователей</em> </p>
+    @*<p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>*@
+</div>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.FirstName)
+            Имя
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.SecondName)
+            Фамилия
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Email)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.PhoneNumber)
+            Номер телефона
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Details)
+            Описание
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.FirstName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SecondName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PhoneNumber)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Details)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.FeedId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.FeedId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.FeedId })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        if (item.IsRead == false)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SecondName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneNumber)
+            </td>
+            <td>
+                @if (item.Details.Length > 50)
+                {
+                    @String.Concat(item.Details.Substring(0, 50), "...")
+                }
+                else
+                {
+                    @Html.DisplayFor(modelItem => item.Details)
+                }   
+            </td>
+            <td>
+                @Html.ActionLink("Подробнее", "Details", new { id = item.FeedId }, htmlAttributes: new { @class = "btn btn-success" }) |
+                <a href="javascript:void(0);" data-id="@item.FeedId" class="btn btn-warning">В прочитаное</a>
+                @*@Html.ActionLink("В прочитанное", "ToRead", new { id = item.FeedId }, htmlAttributes: new { @class = "btn btn-warning" })*@
+            </td>
+        </tr>
+        }
+    }
 
 </table>
+
+@section Scripts {
+
+    <script>
+        $('.btn-warning').click(function (e) {
+            e.preventDefault();
+            var $ctrl = $(this);
+            if (confirm('Вы уверены, что прочитали?')) {
+                $.ajax({
+                    url: '@Url.Action("ToRead")',
+                    type: 'POST',
+                    data: { id: $(this).data('id') }
+                }).done(function (data) {
+                    if (data.Result == "OK") {
+                        $ctrl.closest('tr').remove();
+                    }
+                    else if (data.Result.Message) {
+                        alert(data.Result.Message);
+                    }
+                }).fail(function () {
+                    alert("Что-то пошло не так. Пожалуйста, попробуйте еще раз");
+                })
+
+            }
+        });
+    </script>
+}

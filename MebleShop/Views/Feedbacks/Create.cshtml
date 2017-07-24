@@ -4,6 +4,7 @@
     ViewBag.Title = "Create";
     Layout = "~/Views/Shared/_MainShopLayout.cshtml";
 }
+
 <div class="container_3">
     <div class="oformlenie_zakaza">
         <h3>ОФОРМИТЬ ЗАКАЗ</h3>
@@ -17,38 +18,48 @@
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             <div class="col-md-10" style="padding-bottom: 20px">
                 @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
-                @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control", @style = "font-size: 20px;" } })
+                <br />
+                <br />
+                @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger", @style = "margin-left: 60px; font-size: 18px;" })
             </div>
         
             <div class="col-md-10" style="padding-bottom: 20px">
                 @Html.LabelFor(model => model.SecondName, htmlAttributes: new { @class = "control-label col-md-2" })
-                @Html.EditorFor(model => model.SecondName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.SecondName, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.SecondName, new { htmlAttributes = new { @class = "form-control", @style = "font-size: 20px;" } })
+                <br />
+                <br />
+                @Html.ValidationMessageFor(model => model.SecondName, "", new { @class = "text-danger", @style = "margin-left: 120px; font-size: 18px;" })
             </div>
 
             <div class="col-md-10" style="padding-bottom: 20px">
                 @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
-                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", @style = "font-size: 20px;" } })
+                <br />
+                <br />
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger", @style = "margin-left: 80px; font-size: 18px;" })
             </div>
 
             <div class="col-md-10" style="padding-bottom: 20px">
                 @Html.LabelFor(model => model.PhoneNumber, htmlAttributes: new { @class = "control-label col-md-2" })
-                @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control", @style = "font-size: 20px;" } })
+                <br />
+                <br />
+                @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger", @style = "margin-left: 190px; font-size: 18px;" })
             </div>
 
             <div class="col-md-10" style="padding-bottom: 20px">
                 @Html.LabelFor(model => model.Details, htmlAttributes: new { @class = "control-label col-md-2" })
-                @Html.EditorFor(model => model.Details, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Details, "", new { @class = "text-danger" })
+                @Html.ValidationMessageFor(model => model.Details, "", new { @class = "text-danger", @style = "margin-left: 10px; font-size: 18px;" })
+                @Html.EditorFor(model => model.Details, new { htmlAttributes = new { @class = "form-control", @style = "margin-top:30px; margin-left: 20px; width: 580px; resize: none;" } })
+
+                @*@Html.ValidationMessageFor(model => model.Details, "", new { @class = "text-danger", @style = "margin-left: 50px" })*@
             </div>
 
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
                     @*<button type="submit" value="Create" class="submit" />*@
-                    <button class="submit" type="submit">Сделать заказ</button>
+                    <button class="btn btn-success" type="submit">Отправить заявку</button>
                 </div>
             </div>
         </div>
@@ -56,11 +67,9 @@
     </div>
 
 @section Scripts {
-    <script type="text/javascript">
-           $(document).ready(function () {
-                    $('html, body').animate({
-                     scrollTop: $('h3').offset().top
-                    }, 2000);
-        });
+    <script>
+        window.onload = function () {
+            document.getElementById('Button_zakaz').style.display = 'none';
+        };
     </script>
 }

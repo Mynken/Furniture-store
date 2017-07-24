@@ -14,25 +14,26 @@ namespace MebleShop.Models.Entities
         [HiddenInput(DisplayValue = false)]
         public int FeedId { get; set; }
 
-        [Required(ErrorMessage = "Please write the NAME")]
+        [Required(ErrorMessage = "Пожалуйста, введите имя")]
         [DisplayName("Имя")]
         public string FirstName { get; set; }
 
-        [Required(ErrorMessage = "Please write the SURNAME")]
+        [Required(ErrorMessage = "Пожалуйста, введите фамилию")]
         [DisplayName("Фамилия")]
         public string SecondName { get; set; }
 
-        [Required(ErrorMessage = "Please write the EMAIL")]
+        [Required(ErrorMessage = "Пожалуйста, введите e-mail")]
         public string Email { get; set; }
 
-        [Required(ErrorMessage = "Please write the PHONENUMBER")]
+        [Required(ErrorMessage = "Пожалуйста, введите номер телефона")]
         [DisplayName("Телефон")]
         public string PhoneNumber { get; set; }
 
         [DataType(DataType.MultilineText)]
-        [Required(ErrorMessage = "Please write DETAILS")]
+        [Required(ErrorMessage = "Пожалуйста, введите описание")]
         [DisplayName("Описание")]
         public string Details { get; set; }
+        public bool IsRead { get; set; } = false;
 
     }
 }

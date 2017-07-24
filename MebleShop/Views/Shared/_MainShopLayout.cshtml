@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
     <script src="http://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
 
     @Styles.Render("~/Content/Shop/css")
     @Scripts.Render("~/bundles/shop")
@@ -24,7 +25,7 @@
             <div class="col-sm-3 col-md-3 col-lg-3 header left">
                 <div class="logo">
                     <p>Здесь будет <br> какойто логотип</p>
-                    <div id="Button_zakaz">
+                    <div id="Button_zakaz" runat="server">
                         <p><em>Готовы сделать заказ?</em></p>
                     </div>
                 </div>
@@ -50,7 +51,8 @@
                     <li>@Html.ActionLink("Главная", "Index", "MainShop")</li>
                     <li>@Html.ActionLink("Портфолио", "UserWorkIndex", "OurWork")</li>
                     <li>@Html.ActionLink("Услуги", "UserServiceIndex", "OurService")</li>
-                    <li>@Html.ActionLink("Отзывы", "Create", "Feedbacks")</li>
+                    <li>@Html.ActionLink("Заказать", "Create", "Feedbacks")</li>
+                    <li>@Html.ActionLink("Отзывы", "Contact", "MainShop")</li>
                     <li>@Html.ActionLink("Контакты", "Contact", "MainShop")</li>
                 </ul>
             </center>
@@ -76,6 +78,12 @@
                 </div>
 
                 <div>
+                    <div>
+                        @if (TempData["SuccessMessage"] != null)
+                        {
+                            <div class="alert alert-info" style="margin-top:20px">@TempData["SuccessMessage"]</div>
+                        }
+                    </div>
                     @RenderBody()
 
                     
@@ -95,6 +103,7 @@
             </div>
             @Scripts.Render("~/bundles/jquery")
             @Scripts.Render("~/bundles/bootstrap")
+            @Scripts.Render("~/bundles/shop")
             @RenderSection("scripts", required: false)
 </body>
 </html>

@@ -4,18 +4,15 @@
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>Details</h2>
-
 <div>
-    <h4>Feedback</h4>
+    <h2>Детали отзыва от @Model.FirstName</h2>
     <hr />
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.FirstName)
         </dt>
 
-        <dd>
+        <dd style="margin-bottom: 10px;">
             @Html.DisplayFor(model => model.FirstName)
         </dd>
 
@@ -23,7 +20,7 @@
             @Html.DisplayNameFor(model => model.SecondName)
         </dt>
 
-        <dd>
+        <dd style="margin-bottom: 10px;">
             @Html.DisplayFor(model => model.SecondName)
         </dd>
 
@@ -31,7 +28,7 @@
             @Html.DisplayNameFor(model => model.Email)
         </dt>
 
-        <dd>
+        <dd style="margin-bottom: 10px;">
             @Html.DisplayFor(model => model.Email)
         </dd>
 
@@ -39,7 +36,7 @@
             @Html.DisplayNameFor(model => model.PhoneNumber)
         </dt>
 
-        <dd>
+        <dd style="margin-bottom: 10px;">
             @Html.DisplayFor(model => model.PhoneNumber)
         </dd>
 
@@ -48,12 +45,12 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Details)
+                @Html.DisplayFor(model => model.Details)
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.FeedId }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Назад", "Index", new { }, htmlAttributes: new { @class = "btn btn-primary" })
 </p>
+

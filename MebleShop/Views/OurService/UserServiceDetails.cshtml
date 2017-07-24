@@ -7,7 +7,7 @@
 
 <div class="all1" style="width: 1000px; height: auto; margin: 0 auto; padding: 0;">
     @Html.TextAreaFor(model => model.Description,
-           new { @class = "form-control", rows = 10 })
+           new { @class = "form-control", rows = 10, @readonly = true, @style = "resize: none;" })
 </div>
 <br />
 <div class="editor-label">

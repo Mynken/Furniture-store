@@ -20,7 +20,10 @@ namespace MebleShop.Controllers
         {
             return View(db.Feedbacks.ToList());
         }
-
+        public ActionResult InfoRead()
+        {
+            return View(db.Feedbacks.ToList());
+        }
         // GET: Feedbacks/Details/5
         [Authorize]
         public ActionResult Details(int? id)
@@ -43,27 +46,70 @@ namespace MebleShop.Controllers
             return View();
         }
 
-        // POST: Feedbacks/Create
-        // Чтобы защититься от атак чрезмерной передачи данных, включите определенные свойства, для которых следует установить привязку. Дополнительные 
-        // сведения см. в статье https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "FeedId,FirstName,SecondName,Email,PhoneNumber,Details")] Feedback feedback)
         {
             if (ModelState.IsValid)
             {
+                feedback.IsRead = false;
                 db.Feedbacks.Add(feedback);
                 db.SaveChanges();
-                return RedirectToAction("Index", "Home");
+                TempData["SuccessMessage"] = "Спасибо за потраченое время на выполнение формы, мы рассмотрим вашу заявку в ближайшее время";
+                return RedirectToAction("Index", "MainShop");
             }
 
             return View(feedback);
         }
 
+        [Authorize]
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Feedback feedback = db.Feedbacks.Find(id);
+            if (feedback == null)
+            {
+                return HttpNotFound();
+            }
+            return View(feedback);
+        }
 
+        [Authorize]
+        // POST: Feedbacks/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            Feedback feedback = db.Feedbacks.Find(id);
+            db.Feedbacks.Remove(feedback);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
 
-       
-
+        [HttpPost]
+        public JsonResult ToRead(int id)
+        {
+            try
+            {
+                Feedback feedback = db.Feedbacks.Find(id);
+                if (feedback == null)
+                {
+                    Response.StatusCode = (int)HttpStatusCode.NotFound;
+                    return Json(new { Result = "Error" });
+                }
+                feedback.IsRead = true;
+                db.Entry(feedback).State = EntityState.Modified;
+                db.SaveChanges();
+                return Json(new { Result = "OK" });
+            }
+            catch (Exception ex)
+            {
+                return Json(new { Result = "ERROR", Message = ex.Message });
+            }
+        }
         protected override void Dispose(bool disposing)
         {
             if (disposing)
