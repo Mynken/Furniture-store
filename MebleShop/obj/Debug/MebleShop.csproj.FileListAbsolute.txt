@@ -244,3 +244,4 @@ C:\Users\Waldes\Documents\Visual Studio 2017\Projects\FurnitureStore\MebleShop\o
 C:\Users\Waldes\Documents\Visual Studio 2017\Projects\FurnitureStore\MebleShop\obj\Debug\MebleShop.pdb
 C:\Users\Waldes\Documents\Visual Studio 2017\Projects\FurnitureStore\MebleShop\obj\Debug\MebleShop.csprojResolveAssemblyReference.cache
 C:\Users\Waldes\Documents\Visual Studio 2017\Projects\FurnitureStore\MebleShop\obj\Debug\MebleShop.Migrations.addedboolpropertytoFeedbacksDb.resources
+C:\Users\Waldes\Documents\Visual Studio 2017\Projects\FurnitureStore\MebleShop\obj\Debug\MebleShop.Migrations.addedComentclass.resources

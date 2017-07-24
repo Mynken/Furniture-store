@@ -1,0 +1,51 @@
+﻿@model IEnumerable<MebleShop.Models.Entities.Comment.Coment>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Редактирование отзывов</h2>
+<br />
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Details)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhoneNumber)
+        </td>
+        <td>
+            @if (item.Details.Length > 50)
+                {
+                @String.Concat(item.Details.Substring(0, 50), "...")
+            }
+            else
+            {
+                @Html.DisplayFor(modelItem => item.Details)
+            }
+        </td>
+        <td>
+            @Html.ActionLink("Детали", "Details", new { id = item.ComentId }, htmlAttributes: new { @class = "btn btn-success" }) |
+            @Html.ActionLink("Редактировать", "Edit", new { id = item.ComentId }, htmlAttributes: new { @class = "btn btn-warning" }) | 
+            @Html.ActionLink("Удалить", "Delete", new { id = item.ComentId }, htmlAttributes: new { @class = "btn btn-danger" }) 
+        </td>
+    </tr>
+}
+
+</table>

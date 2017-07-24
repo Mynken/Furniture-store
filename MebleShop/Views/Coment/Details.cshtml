@@ -1,0 +1,42 @@
+﻿@model MebleShop.Models.Entities.Comment.Coment
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Полное описание</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd style="margin-bottom: 10px;">
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+
+        <dd style="margin-bottom: 10px;">
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Details)
+        </dt>
+
+        <dd style="margin-bottom: 10px;">
+            @Html.DisplayFor(model => model.Details)
+        </dd>
+
+    </dl>
+</div>
+<p style="padding-left:90px">
+     @Html.ActionLink("Редактировать", "Edit", new { id = Model.ComentId }, htmlAttributes: new { @class = "btn btn-warning" }) |
+    @Html.ActionLink("Назад", "Index", new { }, htmlAttributes: new { @class = "btn btn-primary" })
+</p>

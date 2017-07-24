@@ -1,0 +1,26 @@
+﻿@model IEnumerable<MebleShop.Models.Entities.Comment.Coment>
+
+@{
+
+    Layout = null;
+}
+<center>
+<div class="all3">
+    <div class="all3_div div7" style="text-align: left;">
+
+        @foreach (var item in Model)
+        {
+            <div class="col-md-10" style="padding-bottom: 20px; margin-left: 50px;">
+                <span style="font-size: 20px;">@Html.DisplayFor(modelItem => item.FirstName)</span>
+
+                <br />
+
+                @Html.DisplayFor(modelItem => item.Details)
+            </div>
+            <br />
+            <br />
+            <p style="color: red;font-weight: bold;">_________________________________________________________________________________</p>
+        }
+    </div>
+    </div>
+</center>

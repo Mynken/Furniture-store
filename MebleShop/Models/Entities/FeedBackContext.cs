@@ -1,5 +1,6 @@
 ﻿using MebleShop.Models.Entities.OurServices;
 using MebleShop.Models.Entities.OurWorks;
+using MebleShop.Models.Entities.Comment;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -15,5 +16,6 @@ namespace MebleShop.Models.Entities
         public DbSet<FileWorkDetail> FileWorkDetails { get; set; }
         public DbSet<Service> Services { get; set; }
         public DbSet<FileServiceDetail> FileServiceDetails { get; set; }
+        public DbSet<Coment> Coments { get; set; }
     }
 }

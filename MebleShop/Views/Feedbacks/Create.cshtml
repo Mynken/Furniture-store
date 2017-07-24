@@ -48,7 +48,7 @@
                 @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger", @style = "margin-left: 190px; font-size: 18px;" })
             </div>
 
-            <div class="col-md-10" style="padding-bottom: 20px">
+            <div class="col-md-10">
                 @Html.LabelFor(model => model.Details, htmlAttributes: new { @class = "control-label col-md-2" })
                 @Html.ValidationMessageFor(model => model.Details, "", new { @class = "text-danger", @style = "margin-left: 10px; font-size: 18px;" })
                 @Html.EditorFor(model => model.Details, new { htmlAttributes = new { @class = "form-control", @style = "margin-top:30px; margin-left: 20px; width: 580px; resize: none;" } })
@@ -57,7 +57,7 @@
             </div>
 
             <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
+                <div class="col-md-offset-2 col-md-10" style="padding-left:70px">
                     @*<button type="submit" value="Create" class="submit" />*@
                     <button class="btn btn-success" type="submit">Отправить заявку</button>
                 </div>

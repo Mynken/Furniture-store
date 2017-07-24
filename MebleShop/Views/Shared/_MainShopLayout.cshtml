@@ -14,6 +14,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
 
+    <link rel="icon" type="image/png" href="http://www.free-icons-download.net/images/app-store-icon-8507.png" />
+
     @Styles.Render("~/Content/Shop/css")
     @Scripts.Render("~/bundles/shop")
 
@@ -52,7 +54,7 @@
                     <li>@Html.ActionLink("Портфолио", "UserWorkIndex", "OurWork")</li>
                     <li>@Html.ActionLink("Услуги", "UserServiceIndex", "OurService")</li>
                     <li>@Html.ActionLink("Заказать", "Create", "Feedbacks")</li>
-                    <li>@Html.ActionLink("Отзывы", "Contact", "MainShop")</li>
+                    <li>@Html.ActionLink("Отзывы", "Create", "Coment")</li>
                     <li>@Html.ActionLink("Контакты", "Contact", "MainShop")</li>
                 </ul>
             </center>
@@ -81,7 +83,7 @@
                     <div>
                         @if (TempData["SuccessMessage"] != null)
                         {
-                            <div class="alert alert-info" style="margin-top:20px">@TempData["SuccessMessage"]</div>
+                            <div class="alert alert-info" id="tempdata" style="margin-top:20px">@TempData["SuccessMessage"]</div>
                         }
                     </div>
                     @RenderBody()
