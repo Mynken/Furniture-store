@@ -18,6 +18,12 @@ namespace MebleShop
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Account", action = "Login", id = UrlParameter.Optional }
             );
+
+            routes.MapRoute(
+            "Name", // Route name
+            "Controller/{action}/{id}", // URL with parameters
+            new { controller = "MainShop", action = "Index", id = UrlParameter.Optional } // Parameter defaults
+        );
         }
     }
 }

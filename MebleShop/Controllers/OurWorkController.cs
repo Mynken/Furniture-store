@@ -14,17 +14,19 @@ namespace MebleShop.Controllers
     public class OurWorkController : Controller
     {
         private FeedBackContext db = new FeedBackContext();
-
+        [Authorize]
         public ActionResult Index()
         {
             return View(db.Works.ToList());
         }
 
+        [Authorize]
         public ActionResult Create()
         {
             return View();
         }
 
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(Work work)
@@ -74,6 +76,7 @@ namespace MebleShop.Controllers
             return View(work);
         }
 
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -88,6 +91,7 @@ namespace MebleShop.Controllers
             return View(work);
         }
 
+        [Authorize]
         public FileResult Download(String p, String d)
         {
             return File(Path.Combine(Server.MapPath("~/App_Data/Upload_work/"), p), System.Net.Mime.MediaTypeNames.Application.Octet, d);
@@ -106,7 +110,20 @@ namespace MebleShop.Controllers
                 return null;
             }
         }
-
+        //public ActionResult GetImagePartial(string workId)
+        //{
+        //    if (workId != null)
+        //    {
+        //        var dir = Server.MapPath("~/App_Data/Upload_work/");
+        //        var path = Path.Combine(dir, workId + ".jpg");
+        //        return File(path, "image/jpeg");
+        //    }
+        //    else
+        //    {
+        //        return null;
+        //    }
+        //}
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Work work)
@@ -157,6 +174,7 @@ namespace MebleShop.Controllers
             return View(work);
         }
 
+        [Authorize]
         [HttpPost]
         public JsonResult DeleteFile(string id)
         {
@@ -193,6 +211,7 @@ namespace MebleShop.Controllers
             }
         }
 
+        [Authorize]
         [HttpPost]
         public JsonResult Delete(int id)
         {
@@ -238,20 +257,6 @@ namespace MebleShop.Controllers
                 return HttpNotFound();
             }
             return View(work);
-        }
-
-        public ActionResult GetImagePartial(string workId)
-        {
-            if (workId != null)
-            {
-                var dir = Server.MapPath("~/App_Data/Upload_work/");
-                var path = Path.Combine(dir, workId + ".jpg");
-                return File(path, "image/jpeg");
-            }
-            else
-            {
-                return null;
-            }
         }
 
         public ActionResult UserWorkIndex()

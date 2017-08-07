@@ -26,5 +26,7 @@ namespace MebleShop.Models.Entities.Comment
         [Required(ErrorMessage = "Пожалуйста, введите описание")]
         [DisplayName("Описание")]
         public string Details { get; set; }
+
+        public DateTime TimeCreated { get; set; }
     }
 }

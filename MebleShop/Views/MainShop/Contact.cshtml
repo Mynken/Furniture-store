@@ -1,33 +1,35 @@
 ﻿
 @{
-    ViewBag.Title = "Contact";
+    ViewBag.Title = "Контакты";
     Layout = "~/Views/Shared/_MainShopLayout.cshtml";
 }
 
 <h3>Контакты</h3>
 
     <div class="all1" style="padding-left: 50px; font-size: 20px;">
-        <address>
-            Киев<br />
-            Святошин, улица им. Кирила<br />
-            <abbr title="Phone">P:</abbr>
-            +38-097-402-44-81
-            <abbr title="Phone">P:</abbr>
-            +38-097-402-44-81
-        </address>
+        <div class="contact_text" style="width:60%; float:left" max-width: 500px;>
+            <address>
+                Укрина, Киев<br />
+                Святошин<br />
+                Дайнеко Кирилл Дцпешович)<br />
+            </address>
+            <br />
+            <br />
 
-        <address>
-            <strong>Тех. поддержка:</strong>   <a href="mailto:futuresoftware_fsw@gmail.com">Futuresoftware_fsw@gmail.com</a><br />
-            <strong>По вопросам маркетинга:</strong> <a href="mailto:futuresoftware_fsw@gmail.com">Futuresoftware_fsw@gmail.com</a>
-        </address>
+            <div style="margin-bottom: 10px;"><img src="~/fonts/images/mts.png" style="vertical-align: middle;" /><span style="margin-left:10px; " title="MTS">+38-050-771-28-99</span></div>
+            <div style="margin-bottom: 10px;"><img src="~/fonts/images/life.jpg" style="vertical-align: middle; max-width: 40px;max-height: 40px;" /><span style="margin-left:10px; " title="Life">+38-063-516-35-47</span></div>
+            <div style="margin-bottom: 10px;"><img src="~/fonts/images/gmail.png" style="vertical-align: middle;" /><span style="margin-left:10px; " title="Gmail">alexm.day1936@gmail.com</span></div>
+            <br />
+            <br />
+
+            <address style="max-width: 500px;">
+                <strong>Тех. поддержка:</strong>   <a href="mailto:FutureSoftWare.fsw@gmail.com">FutureSoftWare.fsw@gmail.com</a><br />
+                <strong>По вопросам маркетинга:</strong> <a href="mailto:FutureSoftWare.fsw@gmail.com">FutureSoftWare.fsw@gmail.com</a>
+            </address>
+        </div>
+        <div class="google_map" style="width:40%; margin-left:60%" ;>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3698.772228484374!2d30.642268023749768!3d50.441644279249346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4c547e2e0213d%3A0xbf16b87ce5d001e2!2z0LLRg9C70LjRhtGPINCQ0LfQtdGA0LHQsNC50LTQttCw0L3RgdGM0LrQsCwg0JrQuNGX0LIsINCj0LrRgNCw0LjQvdCw!5e0!3m2!1sru!2spl!4v1501446837834" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+       
 
         </div>
-@section Scripts {
-    <script type="text/javascript">
-           $(document).ready(function () {
-                    $('html, body').animate({
-                     scrollTop: $('h3').offset().top
-                    }, 2000);
-        });
-    </script>
-}

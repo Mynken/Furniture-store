@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title – *сайт мебели*</title>
+    <title>Аланкир - @ViewBag.Title</title>
 
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
@@ -13,7 +13,6 @@
     <script src="http://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
-
     <link rel="icon" type="image/png" href="http://www.free-icons-download.net/images/app-store-icon-8507.png" />
 
     @Styles.Render("~/Content/Shop/css")
@@ -22,45 +21,38 @@
 </head>
 
 <body>
-    <div class="body">
-        <header id="header" class="col-sm-12 col-md-12 col-lg-12">
-            <div class="col-sm-3 col-md-3 col-lg-3 header left">
-                <div class="logo">
-                    <p>Здесь будет <br> какойто логотип</p>
-                    <div id="Button_zakaz" runat="server">
-                        <p><em>Готовы сделать заказ?</em></p>
+        <div id ="scroll" class="col-sm-12 col-md-12 col-lg-12 body">
+            <header id="header">
+                <div class="col-sm-4 col-md-4 col-lg-4 header left">
+                    <div class="logo">
+                        <img src="~/fonts/images/logo.png" title="Логотип">
                     </div>
                 </div>
-            </div>
-            <div class="col-sm-6 col-md-6 col-lg-6 header center">
-                <div class="name">
-                    <h1>MebelTop</h1>
+                <div class="col-sm-4 col-md-4 col-lg-4 header center">
+                    <div class="name">
+                        <h1 title="Сайт мебели Аланкир"><strong>Аланкир</strong></h1>
+                    </div>
                 </div>
-            </div>
-            <div class="col-sm-3 col-md-3 col-lg-3 header right">
+                <div class="col-sm-4 col-md-4 col-lg-4 header right">
+                    <div class="logo">
+                        <img src="~/fonts/images/logo.png" title="Логотип">
+                    </div>
+                </div>
+            </header>
+
+            <nav id="nav" class="col-sm-12 col-md-12 col-lg-12">
                 <center>
-                    <p class="phone"> <img src="~/fonts/images/icon-phone.png"> +38-097-402-44-81</p>
-                    <p class="phone"> <img src="~/fonts/images/icon-phone.png"> +38-097-402-44-81</p>
-                    <p class="mail"><img src="~/fonts/images/icon-mail.png"> mebel@gmail.com</p>
-
+                    <ul>
+                        <li>@Html.ActionLink("Главная", "Index", "MainShop")</li>
+                        <li>@Html.ActionLink("Портфолио", "UserWorkIndex", "OurWork")</li>
+                        <li>@Html.ActionLink("Услуги", "UserServiceIndex", "OurService")</li>
+                        <li>@Html.ActionLink("Заказать", "Create", "Feedbacks")</li>
+                        <li>@Html.ActionLink("Отзывы", "Create", "Coment")</li>
+                        <li>@Html.ActionLink("Контакты", "Contact", "MainShop")</li>
+                    </ul>
                 </center>
-            </div>
-        </header>
+            </nav>
 
-        <nav id="nav" class="col-sm-12 col-md-12 col-lg-12">
-            <center>
-                <ul>
-                    <li>@Html.ActionLink("Главная", "Index", "MainShop")</li>
-                    <li>@Html.ActionLink("Портфолио", "UserWorkIndex", "OurWork")</li>
-                    <li>@Html.ActionLink("Услуги", "UserServiceIndex", "OurService")</li>
-                    <li>@Html.ActionLink("Заказать", "Create", "Feedbacks")</li>
-                    <li>@Html.ActionLink("Отзывы", "Create", "Coment")</li>
-                    <li>@Html.ActionLink("Контакты", "Contact", "MainShop")</li>
-                </ul>
-            </center>
-        </nav>
-
-        <div id="full-body" class="col-sm-12 col-md-12 col-lg-12">
 
             <div class="col-sm-1 col-md-1 col-lg-1">
 
@@ -69,14 +61,17 @@
                         <div class="arrow up"></div>
                     </div>
                 </div>
+
             </div>
 
             <div class="col-sm-10 col-md-10 col-lg-10 content_body">
 
                 <div class="img_divan">
+                    <hr>
                     <center>
-                        <img src="~/fonts/images/sofa.jpg">
+                        <img src="~/fonts/images/main_greetings.jpg">
                     </center>
+                    <hr>
                 </div>
 
                 <div>
@@ -88,25 +83,43 @@
                     </div>
                     @RenderBody()
 
-                    
-                    @*<footer id="footer">
-                        <div id="P_main" class="col-xs-12 col-md-12 col-lg-12">
-                            <ul id="ul_footer">
-                                <p class="footer_p1">
-                                    <a class="a1" href="#">Умови використання та продажу</a>
-                                    <a class="a2" href="#">Оставить отзыв</a>
-                                    © 2017 FutureSoftWare
-                                </p>
-                            </ul>
+                    <div class="col-sm-1 col-md-1 col-lg-1">
+                        <div id="Button_zakaz" title="Сделать заказ">
+                            <p><em>Готовы сделать заказ?</em></p>
                         </div>
-                    </footer>*@
+                    </div>
                 </div>
             </div>
-            </div>
-            @Scripts.Render("~/bundles/jquery")
-            @Scripts.Render("~/bundles/bootstrap")
-            @Scripts.Render("~/bundles/shop")
-            @RenderSection("scripts", required: false)
+
+        </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/shop")
+    @RenderSection("scripts", required: false)
+    <footer class="col-xs-12 col-md-12 col-lg-12 footer_main">
+
+        <div>
+            <p class="footer_p1" style="padding-top:35px; width:50%; text-align:left; float:left; margin:0px; max-width: 200px;">
+                @DateTime.Now.Year - Аланкир | Copyright (c) <br />
+                Дейнеко Кирилл Военкомович
+            </p>
+            <p class="footer_p232" style="padding-top:35px; width:50%;  margin-left:50%; text-align: right; color: #A26F39;font-size: 14px;">
+                @DateTime.Now.Year - FSW | Copyright (c) <br />
+                Kiril Dajneko, Vladyslav Hrehul, Dmytro Konyshev
+            </p>
+        </div>
+        @*<div class="col-sm-4 col-md-4 col-lg-4">
+
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <p class="footer_p2"> @DateTime.Now.Year - FSW FutureSoftWare</p>
+        </div>*@
+
+
+    </footer>
+
+
 </body>
 </html>
 

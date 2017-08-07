@@ -15,6 +15,7 @@ namespace MebleShop.Controllers
     {
         private FeedBackContext db = new FeedBackContext();
 
+        [Authorize]
         public ActionResult Index()
         {
             return View(db.Services.ToList());
@@ -39,11 +40,13 @@ namespace MebleShop.Controllers
             return View(service);
         }
 
+        [Authorize]
         public ActionResult Create()
         {
             return View();
         }
 
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(Service service)
@@ -93,6 +96,7 @@ namespace MebleShop.Controllers
             return View(service);
         }
 
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -107,6 +111,7 @@ namespace MebleShop.Controllers
             return View(service);
         }
 
+        [Authorize]
         public FileResult Download(String p, String d)
         {
             return File(Path.Combine(Server.MapPath("~/App_Data/Upload_service/"), p), System.Net.Mime.MediaTypeNames.Application.Octet, d);
@@ -126,7 +131,7 @@ namespace MebleShop.Controllers
             }
         }
 
-
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Service service)
@@ -175,7 +180,7 @@ namespace MebleShop.Controllers
             return View(service);
         }
 
-
+        [Authorize]
         [HttpPost]
         public JsonResult DeleteFile(string id)
         {
@@ -212,7 +217,7 @@ namespace MebleShop.Controllers
             }
         }
 
-
+        [Authorize]
         [HttpPost]
         public JsonResult Delete(int id)
         {
@@ -259,12 +264,6 @@ namespace MebleShop.Controllers
             return View(service);
         }
 
-        //public ActionResult Error()
-        //{
-        //    //ViewBag.Message = TempData["message"];
-        //    //ViewBag.Message = "Неправильное расширине файла для загрузки(только .jpg)";
-        //    return View();
-        //}
         protected override void Dispose(bool disposing)
         {
             db.Dispose();

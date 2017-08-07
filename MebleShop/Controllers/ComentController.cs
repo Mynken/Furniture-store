@@ -15,7 +15,7 @@ namespace MebleShop.Controllers
     public class ComentController : Controller
     {
         private FeedBackContext db = new FeedBackContext();
-
+        [Authorize]
         public async Task<ActionResult> Index()
         {
             return View(await db.Coments.ToListAsync());
@@ -24,6 +24,7 @@ namespace MebleShop.Controllers
         {
             return View(db.Coments.ToList());
         }
+        [Authorize]
         public async Task<ActionResult> Details(int? id)
         {
             if (id == null)
@@ -49,6 +50,7 @@ namespace MebleShop.Controllers
         {
             if (ModelState.IsValid)
             {
+                coment.TimeCreated = DateTime.Now;
                 db.Coments.Add(coment);
                 await db.SaveChangesAsync();
                 TempData["SuccessMessage"] = "Спасибо за Ваш отзыв";
@@ -58,7 +60,7 @@ namespace MebleShop.Controllers
             return View(coment);
         }
 
-        // GET: Coment/Edit/5
+        [Authorize]
         public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
@@ -73,9 +75,7 @@ namespace MebleShop.Controllers
             return View(coment);
         }
 
-        // POST: Coment/Edit/5
-        // Чтобы защититься от атак чрезмерной передачи данных, включите определенные свойства, для которых следует установить привязку. Дополнительные 
-        // сведения см. в статье https://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Edit([Bind(Include = "ComentId,FirstName,PhoneNumber,Details")] Coment coment)
@@ -89,7 +89,7 @@ namespace MebleShop.Controllers
             return View(coment);
         }
 
-        // GET: Coment/Delete/5
+        [Authorize]
         public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)
@@ -104,7 +104,7 @@ namespace MebleShop.Controllers
             return View(coment);
         }
 
-        // POST: Coment/Delete/5
+        [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)

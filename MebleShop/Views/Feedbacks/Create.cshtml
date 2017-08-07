@@ -1,11 +1,11 @@
 ﻿@model MebleShop.Models.Entities.Feedback
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Заполнение заказа";
     Layout = "~/Views/Shared/_MainShopLayout.cshtml";
 }
 
-<div class="container_3">
+<div class="container_1">
     <div class="oformlenie_zakaza">
         <h3>ОФОРМИТЬ ЗАКАЗ</h3>
     </div>
@@ -13,7 +13,7 @@
     {
         @Html.AntiForgeryToken()
 
-        <div class="all5">
+        <div class="all5" style="margin-bottom: 20px; height:unset">
             @*<h4>Заполните форму</h4>*@
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             <div class="col-md-10" style="padding-bottom: 20px">
@@ -23,7 +23,7 @@
                 <br />
                 @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger", @style = "margin-left: 60px; font-size: 18px;" })
             </div>
-        
+
             <div class="col-md-10" style="padding-bottom: 20px">
                 @Html.LabelFor(model => model.SecondName, htmlAttributes: new { @class = "control-label col-md-2" })
                 @Html.EditorFor(model => model.SecondName, new { htmlAttributes = new { @class = "form-control", @style = "font-size: 20px;" } })
@@ -64,12 +64,17 @@
             </div>
         </div>
     }
-    </div>
+</div>
 
 @section Scripts {
     <script>
         window.onload = function () {
             document.getElementById('Button_zakaz').style.display = 'none';
+            var Button_up = document.getElementById('Button_up'); // найти элемент
+
+            Button_up.onclick = function () { //обработка клика
+                window.scrollTo(0, 0);
+            };
         };
     </script>
 }

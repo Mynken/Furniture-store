@@ -234,6 +234,10 @@
     <Compile Include="Migrations\201707241517101_added Coment class.Designer.cs">
       <DependentUpon>201707241517101_added Coment class.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201707302010239_Added TimeCreation to CommentDb.cs" />
+    <Compile Include="Migrations\201707302010239_Added TimeCreation to CommentDb.Designer.cs">
+      <DependentUpon>201707302010239_Added TimeCreation to CommentDb.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Entities\Comment\Comment.cs" />
@@ -255,6 +259,7 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\admin.png" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\images\logo.png" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
@@ -338,7 +343,6 @@
   <ItemGroup>
     <Folder Include="App_Data\Upload_service\" />
     <Folder Include="App_Data\Upload_work\" />
-    <Folder Include="fonts\images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -382,6 +386,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201707241517101_added Coment class.resx">
       <DependentUpon>201707241517101_added Coment class.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707302010239_Added TimeCreation to CommentDb.resx">
+      <DependentUpon>201707302010239_Added TimeCreation to CommentDb.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -14,12 +14,12 @@ namespace MebleShop.Controllers
     {
         private FeedBackContext db = new FeedBackContext();
 
-        // GET: Feedbacks
         [Authorize]
         public ActionResult Index()
         {
             return View(db.Feedbacks.ToList());
         }
+        [Authorize]
         public ActionResult InfoRead()
         {
             return View(db.Feedbacks.ToList());
@@ -78,7 +78,6 @@ namespace MebleShop.Controllers
         }
 
         [Authorize]
-        // POST: Feedbacks/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
@@ -89,6 +88,7 @@ namespace MebleShop.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize]
         [HttpPost]
         public JsonResult ToRead(int id)
         {
